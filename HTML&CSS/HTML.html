@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A comprehensive list of HTML elements.">
+    <title>Complete HTML Elements Cheatsheet</title>
+    
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+        section { margin-bottom: 40px; border-bottom: 2px solid #ccc; padding-bottom: 20px; }
+        table, th, td { border: 1px solid black; border-collapse: collapse; padding: 8px; }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Main Website Header (h1)</h1>
+        <nav>
+            <a href="#text">Text Formatting</a> | 
+            <a href="#lists">Lists</a> | 
+            <a href="#tables">Tables</a> | 
+            <a href="#forms">Forms</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="text">
+            <h2>Headings and Text Elements (h2)</h2>
+            <h3>Sub-heading (h3)</h3>
+            <h4>Sub-heading (h4)</h4>
+            <h5>Sub-heading (h5)</h5>
+            <h6>Sub-heading (h6)</h6>
+
+            <p>This is a standard paragraph. Below are various inline text formatting tags:</p>
+            
+            <p>
+                <b>Bold text</b> | 
+                <strong>Important text (Strong)</strong> | 
+                <i>Italic text</i> | 
+                <em>Emphasized text</em> | 
+                <mark>Highlighted text</mark> | 
+                <small>Smaller text</small> | 
+                <del>Deleted text</del> | 
+                <ins>Inserted text</ins> | 
+                <sub>Subscript</sub> | 
+                <sup>Superscript</sup> | 
+                <u>Underlined text</u>
+            </p>
+
+            <hr> <blockquote>
+                This is a blockquote. It is used for long quotations.
+            </blockquote>
+            <q>This is a short inline quote.</q>
+
+            <p>Computer code example: <code>console.log('Hello World');</code></p>
+            
+            <pre>
+This is preformatted text.
+It respects exact spaces
+    and line breaks.
+            </pre>
+            
+            <p>Press <kbd>Ctrl</kbd> + <kbd>C</kbd> to copy.</p>
+        </section>
+
+        <section id="media">
+            <h2>Links and Media</h2>
+            
+            <p><a href="https://www.google.com" target="_blank">This is an external link opening in a new tab</a></p>
+            
+            <img src="https://via.placeholder.com/150" alt="A placeholder image" width="150" height="150">
+
+            <figure>
+                <figcaption>Sample Audio</figcaption>
+                <audio controls>
+                    <source src="audio.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </figure>
+
+            <video width="320" height="240" controls>
+                <source src="video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+
+        <section id="lists">
+            <h2>Lists</h2>
+
+            <h3>Unordered List (Bullet points)</h3>
+            <ul>
+                <li>Apple</li>
+                <li>Banana
+                    <ul>
+                        <li>Nested Item 1</li>
+                        <li>Nested Item 2</li>
+                    </ul>
+                </li>
+                <li>Cherry</li>
+            </ul>
+
+            <h3>Ordered List (Numbers)</h3>
+            <ol type="1"> <li>First step</li>
+                <li>Second step</li>
+                <li>Third step</li>
+            </ol>
+
+            <h3>Description List</h3>
+            <dl>
+                <dt>HTML</dt>
+                <dd>HyperText Markup Language</dd>
+                <dt>CSS</dt>
+                <dd>Cascading Style Sheets</dd>
+            </dl>
+        </section>
+
+        <section id="tables">
+            <h2>Tables</h2>
+            <table>
+                <caption>Employee Roster</caption>
+                <colgroup>
+                    <col span="2" style="background-color: #f9f9f9;">
+                    <col style="background-color: #e6f7ff;">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Department</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>101</td>
+                        <td>Jane Doe</td>
+                        <td>Engineering</td>
+                    </tr>
+                    <tr>
+                        <td>102</td>
+                        <td>John Smith</td>
+                        <td colspan="1">Marketing</td> 
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3">Total Employees: 2</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <section id="forms">
+            <h2>Forms and Inputs</h2>
+            <form action="/submit-data" method="POST">
+                
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    
+                    <label for="fname">First Name:</label>
+                    <input type="text" id="fname" name="fname" placeholder="Enter first name" required><br><br>
+
+                    <label for="pwd">Password:</label>
+                    <input type="password" id="pwd" name="pwd"><br><br>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email"><br><br>
+
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" name="age" min="18" max="99"><br><br>
+
+                    <p>Gender:</p>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label><br>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label><br><br>
+
+                    <p>Hobbies:</p>
+                    <input type="checkbox" id="reading" name="hobby" value="reading">
+                    <label for="reading">Reading</label><br>
+                    <input type="checkbox" id="travel" name="hobby" value="travel">
+                    <label for="travel">Traveling</label><br><br>
+
+                    <label for="cars">Choose a car:</label>
+                    <select id="cars" name="cars">
+                        <optgroup label="Swedish Cars">
+                            <option value="volvo">Volvo</option>
+                            <option value="saab">Saab</option>
+                        </optgroup>
+                        <optgroup label="German Cars">
+                            <option value="mercedes">Mercedes</option>
+                            <option value="audi">Audi</option>
+                        </optgroup>
+                    </select><br><br>
+
+                    <label for="browser">Choose your browser:</label>
+                    <input list="browsers" name="browser" id="browser">
+                    <datalist id="browsers">
+                        <option value="Chrome">
+                        <option value="Firefox">
+                        <option value="Safari">
+                        <option value="Edge">
+                    </datalist><br><br>
+
+                    <label for="message">Message:</label><br>
+                    <textarea id="message" name="message" rows="4" cols="50">Enter text here...</textarea><br><br>
+
+                    <label for="bday">Birthday (Date):</label>
+                    <input type="date" id="bday" name="bday"><br><br>
+
+                    <label for="color">Favorite Color:</label>
+                    <input type="color" id="color" name="color"><br><br>
+                    
+                    <label for="file">Upload a file:</label>
+                    <input type="file" id="file" name="file"><br><br>
+
+                    <input type="submit" value="Submit Form">
+                    <input type="reset" value="Reset Form">
+                    <button type="button" onclick="alert('Button clicked!')">Generic Button</button>
+                </fieldset>
+
+            </form>
+        </section>
+
+        <section id="interactive">
+            <h2>Interactive & Miscellaneous</h2>
+            
+            <details>
+                <summary>Click here to expand more info</summary>
+                <p>This text is hidden until the user clicks the summary element above. Great for FAQs.</p>
+            </details>
+            
+            <br>
+            
+            <label for="fileProgress">Downloading progress:</label>
+            <progress id="fileProgress" value="32" max="100"> 32% </progress>
+
+            <br><br>
+
+            <label for="diskSpace">Disk usage:</label>
+            <meter id="diskSpace" value="0.6" min="0" max="1">60%</meter>
+            
+            <br><br>
+            
+            <div style="background-color: lightgray; padding: 10px;">
+                This is a <b>div</b> element. It is a block-level container used for layout.
+                Inside it, we can put a <span style="color: red;">span</span> element, which is an inline container used to target specific text.
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Example Website. All rights reserved.</p>
+        <address>
+            Written by <a href="mailto:webmaster@example.com">Webmaster</a>.<br>
+            Visit us at: Box 564, Disneyland<br>
+            USA
+        </address>
+    </footer>
+
+    <script>
+        // JavaScript goes here
+        // console.log("HTML loaded successfully");
+    </script>
+</body>
+</html>

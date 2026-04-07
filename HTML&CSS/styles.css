@@ -1,0 +1,236 @@
+/* ==========================================================================
+   IMPORTANT TOPIC 1: CSS VARIABLES
+   Centralizes your design system. Change a color here, it updates everywhere.
+   ========================================================================== */
+   :root {
+    --primary: #4F46E5;       /* Indigo */
+    --primary-hover: #4338CA;
+    --secondary: #10B981;     /* Emerald */
+    --dark: #1F2937;
+    --light: #F3F4F6;
+    --white: #FFFFFF;
+    --text-main: #374151;
+    --radius: 8px;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================================================
+   IMPORTANT TOPIC 2: THE RESET & BOX MODEL
+   Ensures padding/borders don't increase the total width of elements.
+   ========================================================================== */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Crucial for modern layout */
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: var(--light);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   IMPORTANT TOPIC 3: FLEXBOX (Navigation & Cards)
+   ========================================================================== */
+.main-header {
+    background-color: var(--dark);
+    color: var(--white);
+    padding: 1rem 2rem;
+    
+    /* Flexbox Initiation */
+    display: flex; 
+    /* Pushes h1 to the left, nav to the right */
+    justify-content: space-between; 
+    /* Vertically centers items */
+    align-items: center; 
+    
+    position: sticky; /* Keeps header at top on scroll */
+    top: 0;
+    z-index: 100;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px; /* Space between flex items */
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--secondary);
+}
+
+/* Flexbox Demonstration Container */
+.flex-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap to next line if space runs out */
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.flex-item {
+    /* flex-grow: 1, flex-shrink: 1, flex-basis: 200px */
+    flex: 1 1 200px; 
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 20px;
+    text-align: center;
+    border-radius: var(--radius);
+}
+
+/* ==========================================================================
+   IMPORTANT TOPIC 4: CSS GRID (Complex 2D Layouts)
+   ========================================================================== */
+.grid-container {
+    display: grid;
+    /* Creates 4 equal columns */
+    grid-template-columns: repeat(4, 1fr); 
+    /* Defines row heights automatically based on content, except content area */
+    grid-template-rows: auto 200px auto; 
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.grid-container > div {
+    background-color: var(--white);
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: var(--radius);
+    text-align: center;
+}
+
+.grid-header {
+    grid-column: 1 / -1; /* Spans from first column line to the very last */
+    background-color: var(--primary) !important;
+    color: var(--white);
+}
+
+.grid-sidebar {
+    grid-column: 1 / 2; /* Takes up 1st column */
+}
+
+.grid-content {
+    grid-column: 2 / 5; /* Takes up columns 2 through 4 */
+}
+
+.grid-footer {
+    grid-column: 1 / -1;
+}
+
+/* ==========================================================================
+   IMPORTANT TOPIC 5: STYLING UI & FORMS
+   ========================================================================== */
+.card {
+    background: var(--white);
+    margin: 2rem auto;
+    max-width: 1000px;
+    padding: 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.modern-form {
+    display: flex;
+    flex-direction: column; /* Stacks form elements vertically */
+    gap: 1.5rem;
+    max-width: 500px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+input[type="text"], select {
+    padding: 0.75rem;
+    border: 1px solid #cbd5e1;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Pseudo-class: :focus */
+input[type="text"]:focus, select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s, transform 0.1s; /* Animations */
+}
+
+/* Pseudo-classes: :hover and :active */
+.btn-primary:hover { background-color: var(--primary-hover); }
+.btn-primary:active { transform: scale(0.98); } /* Click effect */
+
+/* ==========================================================================
+   MISC UI (Tables, Badges, Accordions)
+   ========================================================================== */
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.styled-table th, .styled-table td {
+    padding: 12px;
+    border-bottom: 1px solid #e5e7eb;
+    text-align: left;
+}
+
+.styled-table th { background-color: var(--light); }
+
+.badge.success {
+    background-color: var(--secondary);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+}
+
+.custom-details {
+    background: var(--light);
+    padding: 1rem;
+    border-radius: var(--radius);
+    cursor: pointer;
+}
+
+/* ==========================================================================
+   IMPORTANT TOPIC 6: MEDIA QUERIES (Responsive Design)
+   Rules that only apply when the screen is smaller than 768px (Tablets/Phones)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column; /* Stack header items vertically */
+        gap: 15px;
+    }
+
+    .grid-container {
+        /* On mobile, turn the grid into a single vertical column */
+        grid-template-columns: 1fr;
+        grid-template-rows: auto; 
+    }
+
+    /* Reset grid columns to standard block flow on mobile */
+    .grid-header, .grid-sidebar, .grid-content, .grid-footer {
+        grid-column: 1 / -1;
+    }
+}

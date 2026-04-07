@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern HTML & CSS Masterclass</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <h1>Frontend Master Reference</h1>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#flexbox">Flexbox</a></li>
+                <li><a href="#grid">CSS Grid</a></li>
+                <li><a href="#forms">Forms & UI</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="flexbox" class="card">
+            <h2>1. Flexbox Layout (1-Dimensional)</h2>
+            <p>Flexbox is perfect for aligning items in a row or column, distributing space dynamically.</p>
+            
+            <div class="flex-container">
+                <div class="flex-item">Item 1</div>
+                <div class="flex-item">Item 2</div>
+                <div class="flex-item">Item 3</div>
+                <div class="flex-item">Item 4 (I will wrap if needed)</div>
+            </div>
+        </section>
+
+        <section id="grid" class="card">
+            <h2>2. CSS Grid Layout (2-Dimensional)</h2>
+            <p>Grid is used for complex page structures, allowing you to define rows and columns.</p>
+            
+            <div class="grid-container">
+                <div class="grid-header">Header (Spans full width)</div>
+                <div class="grid-sidebar">Sidebar</div>
+                <div class="grid-content">Main Content Area</div>
+                <div class="grid-footer">Footer (Spans full width)</div>
+            </div>
+        </section>
+
+        <section id="forms" class="card">
+            <h2>3. Modern UI Forms & Inputs</h2>
+            <form action="#" class="modern-form">
+                
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Enter username" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="theme">Choose Theme</label>
+                    <select id="theme">
+                        <option value="light">Light Mode</option>
+                        <option value="dark">Dark Mode</option>
+                    </select>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="terms">
+                    <label for="terms">I accept the terms and conditions</label>
+                </div>
+
+                <button type="submit" class="btn-primary">Submit Form</button>
+            </form>
+        </section>
+
+        <section class="card">
+            <h2>4. Tables & Interactive Elements</h2>
+            
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>Tech Stack</th>
+                        <th>Type</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>HTML5</td>
+                        <td>Structure</td>
+                        <td><span class="badge success">Active</span></td>
+                    </tr>
+                    <tr>
+                        <td>CSS3</td>
+                        <td>Style</td>
+                        <td><span class="badge success">Active</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <br>
+            <details class="custom-details">
+                <summary>Click to reveal hidden content</summary>
+                <p>This is a native HTML accordion. No JavaScript required!</p>
+            </details>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 AI Code Reference. Built for modern web development.</p>
+    </footer>
+
+</body>
+</html>
